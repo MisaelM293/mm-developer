@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Misael Marte – Desarrollador</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .navbar {
+      background-color: #161b22;
+    }
+
+    .nav-link {
+      color: #c9d1d9 !important;
+    }
+
+    .nav-link:hover {
+      color: #58a6ff !important;
+    }
+
+    .hero {
+      height: 70vh;
+      background: url('assets/img/perfil.png') top left no-repeat;
+      background-size: cover;
+      background-color: #0d1117;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .hero .container {
+      max-width: 700px;
+      padding-left: 0;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      display: block;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .hero .highlight {
+      color: #0d6efd;
+    }
+
+    .hero .btn-primary,
+    .hero .btn-outline-light {
+      font-size: 1.1rem;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .section-title {
+      color: #0d6efd;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+
+    .info-icon {
+      font-size: 2rem;
+      color: #58a6ff;
+    }
+
+    .proyecto {
+      background-color: #161b22;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    footer {
+      background-color: #161b22;
+      color: #8b949e;
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold" href="#">Misael Marte</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Hola, soy <span class="highlight">Misael Marte</span><span>Desarrollador de Software</span></h1>
+      <div class="mt-4">
+        <a href="#contact" class="btn btn-primary me-2">¿Tienes un proyecto?</a>
+        <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#curriculumModal">Mi currículum</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container py-5" id="about">
+    <h2 class="section-title">Sobre mí</h2>
+   <p class="mb-4">
+	  Soy un desarrollador apasionado por crear interfaces de usuario amigables. Inicié mi camino en el desarrollo por curiosidad y por una fuerte inclinación 
+	  a aplicar lógica en todo lo que hacía. Desde entonces, he creado aplicaciones para mi uso personal, y mi trabajo favorito se encuentra en la intersección 
+	  del diseño y el desarrollo móvil y de escritorio, creando experiencias que no solo lucen geniales, sino que están pensadas para el rendimiento y la usabilidad.
+	</p>
+	<p class="mb-4">
+	  Actualmente soy docente de soporte de redes y sistemas informáticos, además de ser Ingeniero de Sistemas. Tengo experiencia como programador Java avanzado, 
+	  desarrollo de aplicaciones móviles en Android con Kotlin, y dominio en tecnologías como CSS y JavaScript. He trabajado en diversos entornos, incluyendo 
+	  software para clínicas y aplicaciones móviles de ventas para grandes empresas.
+	</p>
+	<p>
+	  En mi tiempo libre, disfruto tocar piano, jugar softball y compartir con mi esposa y mis tres hij@s. También me identifico como cristiano evangélico 
+	  pentecostal, lo cual forma parte esencial de mi vida y valores personales.
+	</p>
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-3">
+        <div class="info-icon">💻</div>
+        <h5 class="mt-2">Desarrollo Web</h5>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="info-icon">📱</div>
+        <h5 class="mt-2">Apps Responsivas</h5>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="info-icon">☁️</div>
+        <h5 class="mt-2">Hosting y Deploy</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5" id="projects">
+  <h2 class="section-title">Proyectos</h2>
+  <div class="row">
+    
+    <!-- App 1 -->
+    <div class="col-md-6">
+      <div class="proyecto d-flex flex-column align-items-center text-center">
+        <img src="assets/img/logo_domino.png" alt="App 1" class="mb-3" style="width: 80px; height: 80px;">
+        <h5>LisaDomino (Apuntes)</h5>
+        <p>Lisa Domino es la aplicación indispensable para todos los amantes del dominó. Diseñada para mejorar tu experiencia de juego, 
+		Lisa Domino te libera de tener que llevar la puntuación a mano, permitiéndote concentrarte de lleno en la estrategia y disfrutar cada partida. 
+		Disponible en Android.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.mm.lisadomino" class="btn btn-success btn-sm" target="_blank">Descargar</a>
+      </div>
+    </div>
+
+    <!-- App 2 -->
+    <div class="col-md-6">
+      <div class="proyecto d-flex flex-column align-items-center text-center">
+        <img src="assets/img/logo_instantMsg.png" alt="App 2" class="mb-3" style="width: 80px; height: 80px;">
+        <h5>InstantMsg</h5>
+        <p>InstantMsg es la aplicación en la que podrás enviar mensaje a cualquier numero del mundo que este registrado en WhatsApp, pero sin la necesidad de registrarlo como contacto.
+		Disponible en Android.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.mm.instantmsg" class="btn btn-success btn-sm" target="_blank">Descargar</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <div class="container py-5" id="contact">
+  <h2 class="section-title text-center mb-5">Contáctame</h2>
+  <div class="row justify-content-center g-4">
+
+    <!-- Correo -->
+    <div class="col-md-4">
+      <div class="card bg-dark border-0 shadow-lg text-center h-100">
+	  <<img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" class="card-img-top p-2" style="max-height:120px; object-fit:contain;" alt="Gmail">
+        <div class="card-body">
+          <h5 class="card-title mt-2">Correo electrónico</h5>
+          <p class="card-text">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=misaelm293@gmail.com" target="_blank" class="btn btn-outline-info btn-sm">Escríbeme en Gmail</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GitHub -->
+    <div class="col-md-4">
+      <div class="card bg-dark border-0 shadow-lg h-100">
+        <img src="https://opengraph.githubassets.com/1/MisaelM293" class="card-img-top" alt="GitHub Preview">
+        <div class="card-body text-center">
+          <h5 class="card-title mt-2">GitHub</h5>
+          <a href="https://github.com/MisaelM293" target="_blank" class="btn btn-outline-info btn-sm">Visitar perfil</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+   <div class="col-md-4">
+  <div class="card bg-dark border-0 shadow-lg h-100">
+    <<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="card-img-top p-2" style="max-height:120px; object-fit:contain;" alt="LinkedIn">
+    <div class="card-body text-center">
+      <h5 class="card-title mt-2">LinkedIn</h5>
+      <a href="https://www.linkedin.com/in/misael-marte/" target="_blank" class="btn btn-outline-info btn-sm">Conectemos</a>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+  <footer>
+    &copy; 2025 Misael A. Marte R. Desarrollado con 💙 y Bootstrap.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Modal Currículum -->
+<div class="modal fade" id="curriculumModal" tabindex="-1" aria-labelledby="curriculumModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="curriculumModalLabel">Currículum de Misael Marte</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" style="height: 80vh;">
+        <iframe src="assets/cv/Misael_Marte_CV.pdf" width="100%" height="100%" style="border:none;"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
