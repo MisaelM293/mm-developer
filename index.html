@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Misael Marte – Desarrollador</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title data-lang-key="pageTitle">Misael Marte – Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
@@ -14,78 +14,78 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
-	
-	/* Tema Claro */
-	body.light-mode {
-	  background: radial-gradient(black 1px, transparent 1px);
-	  background-size: 20px 20px;
-	  background-color: #ffffff;
-	  color: #121212;
-	}
-	
-	/* Estilo para el ícono del sol en modo claro */
-	body.light-mode #themeToggle.fa-sun {
-		color: #f1c40f; /* Amarillo dorado */
-	  }
-	  
-	  #themeToggle {
-    transition: color 0.3s ease;
-  }
 
-	/* Navbar en tema claro */
-	body.light-mode .navbar {
-	  background-color: #ffffff;
-	  border-bottom: 1px solid #dee2e6;
-	}
+    /* Light Mode */
+    body.light-mode {
+      background: radial-gradient(black 1px, transparent 1px);
+      background-size: 20px 20px;
+      background-color: #ffffff;
+      color: #121212;
+    }
 
-	body.light-mode .nav-link,
-	body.light-mode .navbar-icons i,
-	body.light-mode .navbar-brand,
-	body.light-mode .navbar-brand span {
-	  color: #121212 !important;
-	}
+    /* Style for sun icon in light mode */
+    body.light-mode #themeToggle.fa-sun {
+      color: #f1c40f; /* Golden yellow */
+    }
+    
+    #themeToggle {
+      transition: color 0.3s ease;
+    }
 
-	/* Fondo de secciones (opcional) */
-	body.light-mode .proyecto {
-	  background-color: rgba(255, 255, 255, 0.8);
-	}
+    /* Navbar in light mode */
+    body.light-mode .navbar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #dee2e6;
+    }
 
-	/* Footer claro */
-	body.light-mode footer {
-	  background-color: #f1f1f1;
-	  color: #333;
-	}
+    body.light-mode .nav-link,
+    body.light-mode .navbar-icons i,
+    body.light-mode .navbar-brand,
+    body.light-mode .navbar-brand span,
+    body.light-mode #languageToggle {
+      color: #121212 !important;
+    }
 
-	/* Modales en claro */
-	body.light-mode .modal-content {
-	  background-color: #ffffff;
-	  color: #121212;
-	}
-	
-	body.light-mode #particles-js {
-	  background-color: #fff;
-	}
+    /* Section background (optional) */
+    body.light-mode .proyecto {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Light footer */
+    body.light-mode footer {
+      background-color: #f1f1f1;
+      color: #333;
+    }
+
+    /* Light modals */
+    body.light-mode .modal-content {
+      background-color: #ffffff;
+      color: #121212;
+    }
+    
+    body.light-mode #particles-js {
+      background-color: #fff;
+    }
 
     a {
       text-decoration: none;
     }
-	
+    
     .navbar {
-	  font-weight: 500;
-	  letter-spacing: 0.5px;
-	  padding-top: 0.7rem;
-	  padding-bottom: 0.7rem;
-	  z-index: 1001;
-	}
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      z-index: 1001;
+    }
 
-	.nav-link {
-	  position: relative;
-	  color: #c9d1d9 !important;
-	  transition: all 0.3s ease;
-	}
+    .nav-link {
+      position: relative;
+      color: #c9d1d9 !important;
+      transition: all 0.3s ease;
+    }
 
-	
-	.nav-link {
+    .nav-link {
       color: #c9d1d9 !important;
       transition: transform 0.3s ease, color 0.3s ease;
       font-weight: 500;
@@ -96,44 +96,43 @@
       color: #58a6ff !important;
       transform: scale(1.05);
     }
-	
-	.navbar-brand {
+    
+    .navbar-brand {
       font-weight: 600;
       font-size: 1.4rem;
       color: #7ca6ff !important;
     }
 
-	.navbar-brand span {
-	  font-weight: 600;
-	  color: #c9d1d9;
-	}
-	
-	.navbar-icons {
+    .navbar-brand span {
+      font-weight: 600;
+      color: #c9d1d9;
+    }
+    
+    .navbar-icons {
       display: flex;
       gap: 1rem;
       align-items: center;
       color: #c9d1d9;
     }
 
-    .navbar-icons i {
+    .navbar-icons i, #languageToggle {
       font-size: 1rem;
       cursor: pointer;
-	  transition: transform 0.2s ease, color 0.3s ease;
-
+      transition: transform 0.2s ease, color 0.3s ease;
+      color: #c9d1d9; /* Ensure color is set for consistency */
     }
 
-    .navbar-icons i:hover {
-       color: #58a6ff;
-	transform: translateY(-3px) rotate(-10deg);
-
+    .navbar-icons i:hover, #languageToggle:hover {
+      color: #58a6ff;
+      transform: translateY(-3px) rotate(-10deg);
     }
-	
-	body.light .hero {
-	  background-color: #f5f5f5;
-	}
-	body.light .btn-primary {
-	  background-color: #0d6efd;
-	}
+    
+    body.light .hero {
+      background-color: #f5f5f5;
+    }
+    body.light .btn-primary {
+      background-color: #0d6efd;
+    }
 
     .hero {
       height: 70vh;
@@ -170,8 +169,8 @@
     .hero .highlight {
       color: #0d6efd;
     }
-	
-	.hero .highlight2 {
+    
+    .hero .highlight2 {
       color: #ffffff;
     }
 
@@ -200,12 +199,12 @@
     }
 
     .proyecto {
-	  background-color: rgba(22, 27, 34, 0.8);
-	  padding: 1.5rem;
-	  border-radius: 8px;
-	  margin-bottom: 1.5rem;
-	  transition: transform 0.3s ease;
-	}
+      background-color: rgba(22, 27, 34, 0.8);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
 
     .proyecto:hover {
       transform: scale(1.03);
@@ -248,32 +247,31 @@
     }
 
     #particles-js {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  background-color: #000;
-	  z-index: 0;
-	}
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      z-index: 0;
+    }
 
-	main, section, .container, .navbar, footer {
-	  position: relative;
-	  z-index: 1;
-	}
-	
-	.modal-content {
+    main, section, .container, .navbar, footer {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .modal-content {
       background-color: inherit;
       color: inherit;
     }
-	
-	mark.resaltado {
-	  background-color: yellow;
-	  padding: 0 2px;
-	  border-radius: 3px;
-	}
-	
-	
+    
+    mark.resaltado {
+      background-color: yellow;
+      padding: 0 2px;
+      border-radius: 3px;
+    }
+    
   </style>
 </head>
 <body>
@@ -281,56 +279,59 @@
   <div id="particles-js"></div>
 
   <nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#">Misael<span> Marte</span></a>
-    <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto me-3">
-        <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-      </ul>
-      <div class="navbar-icons">
-        <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#modalBusqueda"></i>
-        <i id="themeToggle" class="fas fa-moon" style="cursor:pointer;"></i> <!-- Este cambiará a fa-sun -->
+    <div class="container">
+      <a class="navbar-brand" href="#">M A.<span> M R.</span></a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="#about" data-lang-key="navAbout">About me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-lang-key="navProjects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-lang-key="navContact">Contact</a></li>
+        </ul>
+        <div class="navbar-icons">
+          <i class="fas fa-search" data-bs-toggle="modal" data-bs-target="#modalBusqueda"></i>
+          <i id="themeToggle" class="fas fa-moon" style="cursor:pointer;"></i>
+          <span id="languageToggle" style="cursor:pointer; font-weight: bold; margin-left: 10px;">ES</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+    
+    <div class="modal fade" id="modalBusqueda" tabindex="-1">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h5 class="modal-title" data-lang-key="searchTitle">Search</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="busquedaInput" class="form-control" placeholder="Search content..." data-lang-placeholder-key="searchPlaceholder">
+          <ul id="sugerencias" class="list-group"></ul>
+        </div>
       </div>
     </div>
   </div>
-</nav>
-  
-  
-	 <!-- Modal de búsqueda -->
-	<div class="modal fade" id="modalBusqueda" tabindex="-1">
-	  <div class="modal-dialog modal-md">
-		<div class="modal-content text-center">
-		  <div class="modal-header">
-			<h5 class="modal-title">Buscar</h5>
-			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-		  </div>
-		  <div class="modal-body">
-			<input type="text" id="busquedaInput" class="form-control" placeholder="Buscar contenido...">
-			<ul id="sugerencias" class="list-group"></ul>
-		  </div>
-		</div>
-	  </div>
-	</div>
 
   <section class="hero">
     <div class="container">
-      <h1 class="highlight2">Hola, soy <span class="highlight">Misael Marte</span><br><span id="typewriter" class="typewriter-text"></span></h1>
+      <h1 class="highlight2">
+        <span id="heroGreetingPrefix" data-lang-key="heroGreetingPrefix">Hello, I'm </span>
+        <span class="highlight">Misael Marte</span><br>
+        <span id="typewriter" class="typewriter-text"></span>
+      </h1>
       <div class="mt-4">
-        <a href="#contact" class="btn btn-primary me-2">¿Tienes un proyecto?</a>
-        <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#curriculumModal">Mi currículum</a>
+        <a href="#contact" class="btn btn-primary me-2" data-lang-key="heroButtonProject">Got a project?</a>
+        <a href="#" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#curriculumModal" data-lang-key="heroButtonCV">My Resume</a>
       </div>
     </div>
   </section>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Partículas de fondo
+    // Particles background
     particlesJS("particles-js", {
       particles: {
         number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -361,325 +362,465 @@
       reveals.forEach(el => observer.observe(el));
     });
 
-    // Cursor personalizado
+    // Custom cursor
     const cursor = document.getElementById('custom-cursor');
     document.addEventListener('mousemove', e => {
       cursor.style.top = `${e.clientY}px`;
       cursor.style.left = `${e.clientX}px`;
     });
 
-    // Texto tipo máquina
-    const words = ["Desarrollador de Software", "Docente IT", "Desarrollador Android", "Freelancer"];
+    // Typewriter effect
+    const words = {
+      en: ["Software Developer", "IT Instructor", "Android Developer", "Freelancer"],
+      es: ["Desarrollador de Software", "Docente IT", "Desarrollador Android", "Freelancer"]
+    };
     let wordIndex = 0;
     let charIndex = 0;
     const typeTarget = document.getElementById("typewriter");
+    let currentLanguage = localStorage.getItem('language') || 'en'; // Get language from localStorage
+    let typewriterTimeout; // Variable para almacenar el ID del timeout del efecto de máquina de escribir
 
     function typeEffect() {
       if (!typeTarget) return;
-      const currentWord = words[wordIndex];
+      const currentWordList = words[currentLanguage];
+      const currentWord = currentWordList[wordIndex];
       const partial = currentWord.substring(0, charIndex++);
       typeTarget.textContent = partial;
 
       if (charIndex > currentWord.length) {
-        setTimeout(() => eraseEffect(), 1500);
+        typewriterTimeout = setTimeout(() => eraseEffect(), 1500);
       } else {
-        setTimeout(typeEffect, 100);
+        typewriterTimeout = setTimeout(typeEffect, 100);
       }
     }
 
     function eraseEffect() {
-      const currentWord = words[wordIndex];
+      const currentWordList = words[currentLanguage];
+      const currentWord = currentWordList[wordIndex];
       const partial = currentWord.substring(0, charIndex--);
       typeTarget.textContent = partial;
 
       if (charIndex === 0) {
-        wordIndex = (wordIndex + 1) % words.length;
-        setTimeout(typeEffect, 300);
+        wordIndex = (wordIndex + 1) % currentWordList.length;
+        typewriterTimeout = setTimeout(typeEffect, 300);
       } else {
-        setTimeout(eraseEffect, 50);
+        typewriterTimeout = setTimeout(eraseEffect, 50);
       }
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      if (typeTarget) typeEffect();
+    // Theme Toggle
+    document.getElementById('themeToggle').addEventListener('click', e => {
+      document.body.classList.toggle('light-mode'); // Changed to light-mode for consistency with CSS
+      const isLightMode = document.body.classList.contains('light-mode');
+      e.target.classList.remove(isLightMode ? "fa-moon" : "fa-sun");
+      e.target.classList.add(isLightMode ? "fa-sun" : "fa-moon");
     });
-	
-	document.getElementById('themeToggle').addEventListener('click', e => {
-	  document.body.classList.toggle('light');
-	  e.target.classList.toggle('fa-sun');
-	  e.target.classList.toggle('fa-moon');
-	});
-	
-	//boton buscar
-	document.addEventListener('DOMContentLoaded', () => {
-	  const inputBusqueda = document.getElementById('busquedaInput');
-	  const modalBusqueda = document.getElementById('modalBusqueda');
-	  const modal = new bootstrap.Modal(modalBusqueda);
-	  const sugerenciasLista = document.getElementById("sugerencias");
+    
+    // Search Button
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputBusqueda = document.getElementById('busquedaInput');
+      const modalBusqueda = document.getElementById('modalBusqueda');
+      const modal = new bootstrap.Modal(modalBusqueda);
+      const sugerenciasLista = document.getElementById("sugerencias");
 
-	  // Atajo de teclado Ctrl+F o Cmd+F
-	  document.addEventListener('keydown', (e) => {
-		if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
-		  e.preventDefault(); // Previene el buscador del navegador
-		  modal.show();
-		  setTimeout(() => inputBusqueda.focus(), 300); // Espera a que se abra el modal
-		}
-	  });
-	  
-	  // Sugerencias en tiempo real
-	inputBusqueda.addEventListener('input', () => {
-	  const texto = inputBusqueda.value.trim().toLowerCase();
-	  sugerenciasLista.innerHTML = '';
-	  if (texto.length < 3) return;
-
-	  const coincidencias = new Set();
-
-	  // Busca coincidencias únicas
-	  const nodosTexto = Array.from(document.body.querySelectorAll("*:not(script):not(style):not(mark)"))
-		.filter(el => el.childNodes.length && Array.from(el.childNodes).some(n => n.nodeType === 3));
-
-	  nodosTexto.forEach(el => {
-		el.childNodes.forEach(nodo => {
-		  if (nodo.nodeType === 3) {
-			const contenido = nodo.nodeValue.toLowerCase();
-			if (contenido.includes(texto)) {
-			  const oracion = nodo.nodeValue.trim();
-			  if (oracion.length > 0) {
-				coincidencias.add(oracion.length > 100 ? oracion.slice(0, 100) + '…' : oracion);
-			  }
-			}
-		  }
-		});
-	  });
-
-	  // Mostrar sugerencias
-	  Array.from(coincidencias).slice(0, 5).forEach(resultado => {
-		const li = document.createElement("li");
-		li.classList.add("list-group-item", "list-group-item-action");
-		li.style.cursor = "pointer";
-		li.textContent = resultado;
-		
-		li.addEventListener('click', () => {
-  inputBusqueda.value = resultado;
-  sugerenciasLista.innerHTML = '';
-
-  // Buscar y resaltar directamente el nodo con ese texto exacto
-  const nodosTexto = Array.from(document.body.querySelectorAll("*:not(script):not(style):not(mark)"))
-    .filter(el => el.childNodes.length && Array.from(el.childNodes).some(n => n.nodeType === 3));
-
-  let encontrado = false;
-
-  nodosTexto.forEach(el => {
-    el.childNodes.forEach(nodo => {
-      if (nodo.nodeType === 3 && nodo.nodeValue.trim().includes(resultado)) {
-        const regex = new RegExp(`(${resultado})`, 'i');
-        const span = document.createElement("span");
-        span.innerHTML = nodo.nodeValue.replace(regex, `<mark class="resaltado">$1</mark>`);
-        el.replaceChild(span, nodo);
-
-        const marca = span.querySelector('mark');
-        if (marca) {
-          marca.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Keyboard shortcut Ctrl+F or Cmd+F
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+          e.preventDefault(); // Prevents browser's search
+          modal.show();
+          setTimeout(() => inputBusqueda.focus(), 300); // Wait for modal to open
         }
+      });
+      
+      // Real-time suggestions
+      inputBusqueda.addEventListener('input', () => {
+        const texto = inputBusqueda.value.trim().toLowerCase();
+        sugerenciasLista.innerHTML = '';
+        if (texto.length < 3) return;
 
-        encontrado = true;
+        const coincidencias = new Set();
+
+        // Search for unique matches
+        const nodosTexto = Array.from(document.body.querySelectorAll("*:not(script):not(style):not(mark)"))
+          .filter(el => el.childNodes.length && Array.from(el.childNodes).some(n => n.nodeType === 3));
+
+        nodosTexto.forEach(el => {
+          el.childNodes.forEach(nodo => {
+            if (nodo.nodeType === 3) {
+              const contenido = nodo.nodeValue.toLowerCase();
+              if (contenido.includes(texto)) {
+                const oracion = nodo.nodeValue.trim();
+                if (oracion.length > 0) {
+                  coincidencias.add(oracion.length > 100 ? oracion.slice(0, 100) + '…' : oracion);
+                }
+              }
+            }
+          });
+        });
+
+        // Display suggestions
+        Array.from(coincidencias).slice(0, 5).forEach(resultado => {
+          const li = document.createElement("li");
+          li.classList.add("list-group-item", "list-group-item-action");
+          li.style.cursor = "pointer";
+          li.textContent = resultado;
+          
+          li.addEventListener('click', () => {
+            inputBusqueda.value = resultado;
+            sugerenciasLista.innerHTML = '';
+
+            // Search and highlight the exact node with that text
+            const nodosTexto = Array.from(document.body.querySelectorAll("*:not(script):not(style):not(mark)"))
+              .filter(el => el.childNodes.length && Array.from(el.childNodes).some(n => n.nodeType === 3));
+
+            let encontrado = false;
+
+            nodosTexto.forEach(el => {
+              el.childNodes.forEach(nodo => {
+                if (nodo.nodeType === 3 && nodo.nodeValue.trim().includes(resultado)) {
+                  const regex = new RegExp(`(${resultado})`, 'i');
+                  const span = document.createElement("span");
+                  span.innerHTML = nodo.nodeValue.replace(regex, `<mark class="resaltado">$1</mark>`);
+                  nodo.parentNode.replaceChild(span, nodo);
+
+                  const marca = span.querySelector('mark');
+                  if (marca) {
+                    marca.scrollIntoView({ behavior: "smooth", block: "center" });
+                  }
+
+                  encontrado = true;
+                }
+              });
+            });
+
+            if (!encontrado) {
+              alert('Content not found');
+            }
+
+            // Close the modal if open
+            const modal = bootstrap.Modal.getInstance(document.getElementById('modalBusqueda'));
+            if (modal) modal.hide();
+          });
+          
+          sugerenciasLista.appendChild(li);
+        });
+      });
+
+      // Search on Enter key press
+      inputBusqueda.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          limpiarResaltado();
+          realizarBusqueda(inputBusqueda.value.trim());
+        }
+      });
+
+      // Clear on modal close
+      modalBusqueda.addEventListener('hidden.bs.modal', () => {
+        inputBusqueda.value = '';
+        limpiarResaltado();
+      });
+
+      function realizarBusqueda(texto) {
+        if (!texto) return;
+
+        const contenido = document.body;
+        const regex = new RegExp(`(${texto})`, 'gi');
+        let encontrado = false;
+        let primeraCoincidencia = null;
+
+        const recorrerNodos = (nodo) => {
+          if (nodo.nodeType === 3 && nodo.parentNode && nodo.parentNode.nodeName !== "SCRIPT" && nodo.parentNode.nodeName !== "STYLE") {
+            if (regex.test(nodo.nodeValue)) {
+              const span = document.createElement("span");
+              span.innerHTML = nodo.nodeValue.replace(regex, `<mark class="resaltado">$1</mark>`);
+              nodo.parentNode.replaceChild(span, nodo);
+              if (!primeraCoincidencia) {
+                primeraCoincidencia = span.querySelector("mark.resaltado");
+              }
+              encontrado = true;
+            }
+          } else if (nodo.nodeType === 1 && nodo.childNodes && !['SCRIPT', 'STYLE', 'MARK'].includes(nodo.nodeName)) {
+            nodo.childNodes.forEach(recorrerNodos);
+          }
+        };
+
+        recorrerNodos(contenido);
+
+        if (encontrado && primeraCoincidencia) {
+          primeraCoincidencia.scrollIntoView({ behavior: "smooth", block: "center" });
+          modal.hide(); // Close the modal
+        } else {
+          alert(translations[currentLanguage]['alertNotFound'] + `: "${texto}"`);
+        }
+      }
+
+      function limpiarResaltado() {
+        const marcas = document.querySelectorAll('mark.resaltado');
+        marcas.forEach(mark => {
+          const texto = document.createTextNode(mark.textContent);
+          mark.parentNode.replaceChild(texto, mark);
+          mark.parentNode.normalize();
+        });
       }
     });
-  });
 
-  if (!encontrado) {
-    alert('No se encontró el contenido');
-  }
+    // Language Toggle
+    const translations = {
+      en: {
+        pageTitle: "Misael Marte – Developer",
+        navAbout: "About me",
+        navProjects: "Projects",
+        navContact: "Contact",
+        searchTitle: "Search",
+        searchPlaceholder: "Search content...",
+        heroGreetingPrefix: "Hello, I'm ",
+        heroButtonProject: "Got a project?",
+        heroButtonCV: "My Resume",
+        aboutTitle: "About me",
+        aboutPara1: "I am a developer with a deep passion for creating intuitive and functional user interfaces. My journey into the world of development began driven by curiosity and a strong inclination towards applied logic. Since then, I have developed various applications for personal use, focusing especially on projects that integrate design and development, in both mobile and desktop environments. My goal has always been to build digital experiences that not only look good but also offer high performance and excellent usability.",
+        aboutPara2: "I currently work as an instructor in the area of network and IT systems support, in addition to being a Systems Engineer. I have experience as an advanced Java programmer, as well as in developing mobile applications on Android using Kotlin. I master web technologies such as CSS and JavaScript, and I have participated in software projects focused on Medical Centers and mobile sales applications for large companies.",
+        aboutPara3: "Outside of my professional life, I enjoy playing the piano, playing softball, and spending quality time with my wife and our three children. I identify as a Pentecostal evangelical Christian, a fundamental part of my life that guides my personal values and principles.",
+        webDev: "Web Development",
+        responsiveApps: "Responsive Apps",
+        hostingDeploy: "Hosting & Deploy",
+        projectsTitle: "Projects",
+        lisaDominoTitle: "LisaDomino (Notes)",
+        lisaDominoDesc: "An essential application for all domino lovers. Designed to enhance your gaming experience, allowing you to fully concentrate on strategy and enjoy every game. Available on Android.",
+        download: "Download",
+        instantMsgTitle: "InstantMsg",
+        instantMsgDesc: "InstantMsg is the application where you can send messages to any number in the world registered on WhatsApp, and if not, it sends an invitation, without the need to save it as a contact. Available on Android.",
+        mercaVillaTitle: "MercaVilla",
+        mercaVillaDesc: "Web application for selling food and artisanal products, using Bootstrap, HTML5, CSS, Firebase, simple and efficient interface.",
+        viewNetlify: "View on Netlify",
+        contactTitle: "Contact me",
+        emailTitle: "Email",
+        emailButton: "Email me on Gmail",
+        githubTitle: "GitHub",
+        githubButton: "Visit profile",
+        linkedinTitle: "LinkedIn",
+        linkedinButton: "Connect with me",
+        footerText: "&copy; 2025 Misael A. Marte R. Developed with 💙 and Bootstrap.",
+        cvModalTitle: "Misael Marte's Resume",
+        alertNotFound: "No content found matching"
 
-  // Cerrar el modal si está abierto
-  const modal = bootstrap.Modal.getInstance(document.getElementById('modalBusqueda'));
-  if (modal) modal.hide();
-});
-		
-		sugerenciasLista.appendChild(li);
-	  });
-	});
+      },
+      es: {
+        pageTitle: "Misael Marte – Desarrollador",
+        navAbout: "Sobre mí",
+        navProjects: "Proyectos",
+        navContact: "Contacto",
+        searchTitle: "Buscar",
+        searchPlaceholder: "Buscar contenido...",
+        heroGreetingPrefix: "Hola, soy ",
+        heroButtonProject: "¿Tienes un proyecto?",
+        heroButtonCV: "Mi currículum",
+        aboutTitle: "Sobre mí",
+        aboutPara1: "Soy un desarrollador con una profunda pasión por crear interfaces de usuario intuitivas y funcionales. Mi camino en el mundo del desarrollo comenzó impulsado por la curiosidad y una marcada inclinación hacia la lógica aplicada. Desde entonces, he desarrollado diversas aplicaciones de uso personal, enfocándome especialmente en aquellos proyectos que integran diseño y desarrollo, tanto en entornos móviles como de escritorio. Mi objetivo siempre ha sido construir experiencias digitales que no solo se vean bien, sino que también ofrezcan un alto rendimiento y una excelente usabilidad.",
+        aboutPara2: "Actualmente me desempeño como docente en el área de soporte de redes y sistemas informáticos, además de ser Ingeniero en Sistemas. Cuento con experiencia como programador avanzado en Java, así como en el desarrollo de aplicaciones móviles en Android utilizando Kotlin. Domino tecnologías web como CSS y JavaScript, y he participado en proyectos de software enfocados en Centros Médicos y en aplicaciones móviles de ventas para grandes empresas.",
+        aboutPara3: "Fuera del ámbito profesional, disfruto tocar el piano, jugar softball y compartir tiempo de calidad con mi esposa y nuestros tres hij@s. Me identifico como cristiano evangélico pentecostal, una parte fundamental de mi vida que guía mis valores y principios personales.",
+        webDev: "Desarrollo Web",
+        responsiveApps: "Apps Responsivas",
+        hostingDeploy: "Hosting y Deploy",
+        projectsTitle: "Proyectos",
+        lisaDominoTitle: "LisaDomino (Apuntes)",
+        lisaDominoDesc: "Aplicación indispensable para todos los amantes del dominó. Diseñada para mejorar tu experiencia de juego, permitiéndote concentrarte de lleno en la estrategia y disfrutar cada partida. Disponible en Android.",
+        download: "Descargar",
+        instantMsgTitle: "InstantMsg",
+        instantMsgDesc: "InstantMsg es la aplicación en la que podrás enviar mensaje a cualquier número en el mundo que esté registrado en WhatsApp y si no lo está le envía una invitación, pero sin la necesidad de registrarlo como contacto. Disponible en Android.",
+        mercaVillaTitle: "MercaVilla",
+        mercaVillaDesc: "Aplicación web para ventas de productos comestibles y artesanales, usando Bootstrap, HTML5, CSS, Firebase, Interfaz sencilla y eficiente.",
+        viewNetlify: "Ver en Netlify",
+        contactTitle: "Contáctame",
+        emailTitle: "Correo electrónico",
+        emailButton: "Escríbeme en Gmail",
+        githubTitle: "GitHub",
+        linkedinTitle: "LinkedIn",
+        linkedinButton: "Conectemos",
+        footerText: "&copy; 2025 Misael A. Marte R. Desarrollado con 💙 y Bootstrap.",
+        cvModalTitle: "Currículum de Misael Marte",
+        alertNotFound: "No se encontró contenido que coincida con"
+      }
+    };
 
-	  // Búsqueda al presionar Enter
-	  inputBusqueda.addEventListener('keydown', (e) => {
-		if (e.key === 'Enter') {
-		  e.preventDefault();
-		  limpiarResaltado();
-		  realizarBusqueda(inputBusqueda.value.trim());
-		}
-	  });
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+      currentLanguage = lang; // Update global language variable for typewriter effect
+      localStorage.setItem('language', lang); // Save preference
 
-	  // Limpiar al cerrar el modal
-	  modalBusqueda.addEventListener('hidden.bs.modal', () => {
-		inputBusqueda.value = '';
-		limpiarResaltado();
-	  });
+      // Update document title
+      document.querySelector('title').textContent = translations[lang]['pageTitle'];
 
-	  function realizarBusqueda(texto) {
-		if (!texto) return;
+      // Update static text content
+      document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.dataset.langKey;
+        // Specifically handle the hero greeting prefix
+        if (element.id === 'heroGreetingPrefix') {
+            element.textContent = translations[lang][key];
+        } else if (key !== 'heroGreetingPrefix') { // All other elements
+            if (translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        }
+      });
 
-		const contenido = document.body;
-		const regex = new RegExp(`(${texto})`, 'gi');
-		let encontrado = false;
-		let primeraCoincidencia = null;
+      // Update placeholder text
+      document.querySelectorAll('[data-lang-placeholder-key]').forEach(element => {
+        const key = element.dataset.langPlaceholderKey;
+        if (translations[lang][key]) {
+          element.placeholder = translations[lang][key];
+        }
+      });
+      
+      // Handle HTML content for specific elements like footer
+      const footerElement = document.querySelector('footer');
+      if (footerElement) {
+        footerElement.innerHTML = translations[lang]['footerText'];
+      }
 
-		const recorrerNodos = (nodo) => {
-		  if (nodo.nodeType === 3 && nodo.parentNode && nodo.parentNode.nodeName !== "SCRIPT" && nodo.parentNode.nodeName !== "STYLE") {
-			if (regex.test(nodo.nodeValue)) {
-			  const span = document.createElement("span");
-			  span.innerHTML = nodo.nodeValue.replace(regex, `<mark class="resaltado">$1</mark>`);
-			  nodo.parentNode.replaceChild(span, nodo);
-			  if (!primeraCoincidencia) {
-				primeraCoincidencia = span.querySelector("mark.resaltado");
-			  }
-			  encontrado = true;
-			}
-		  } else if (nodo.nodeType === 1 && nodo.childNodes && !['SCRIPT', 'STYLE', 'MARK'].includes(nodo.nodeName)) {
-			nodo.childNodes.forEach(recorrerNodos);
-		  }
-		};
+      // Re-initialize typewriter effect for new language
+      clearTimeout(typewriterTimeout); // Detiene cualquier animación de máquina de escribir en curso
+      wordIndex = 0;
+      charIndex = 0;
+      if (typeTarget) { // Asegúrate de que el elemento existe antes de intentar manipularlo
+        typeTarget.textContent = ''; // Limpia el texto actual antes de iniciar la nueva animación
+      }
+      typeEffect(); // Llama a typeEffect para iniciar la animación con el nuevo idioma
+      
+      // Update language toggle text
+      document.getElementById('languageToggle').textContent = (lang === 'en' ? 'ES' : 'EN');
+    }
 
-		recorrerNodos(contenido);
+    // Set initial language based on localStorage or default to English
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('language') || 'en';
+      setLanguage(savedLang); // Esto ahora llamará a typeEffect para el idioma inicial
 
-		if (encontrado && primeraCoincidencia) {
-		  primeraCoincidencia.scrollIntoView({ behavior: "smooth", block: "center" });
-		  modal.hide(); // Cierra el modal
-		} else {
-		  alert(`No se encontró contenido que coincida con: "${texto}"`);
-		}
-	  }
-
-	  function limpiarResaltado() {
-		const marcas = document.querySelectorAll('mark.resaltado');
-		marcas.forEach(mark => {
-		  const texto = document.createTextNode(mark.textContent);
-		  mark.parentNode.replaceChild(texto, mark);
-		  mark.parentNode.normalize();
-		});
-	  }
-	});
-	
+      document.getElementById('languageToggle').addEventListener('click', () => {
+        const newLang = currentLanguage === 'en' ? 'es' : 'en';
+        setLanguage(newLang);
+      });
+    });
   </script>
 
   <div class="container py-5" id="about">
-    <h2 class="section-title">Sobre mí</h2>
-   <p class="mb-4">
-	  Soy un desarrollador apasionado por crear interfaces de usuario amigables. Inicié mi camino en el desarrollo por curiosidad y por una fuerte inclinación 
-	  a aplicar lógica en todo lo que hacía. Desde entonces, he creado aplicaciones para mi uso personal, y mi trabajo favorito se encuentra en la intersección 
-	  del diseño y el desarrollo móvil y de escritorio, creando experiencias que no solo lucen geniales, sino que están pensadas para el rendimiento y la usabilidad.
-	</p>
-	<p class="mb-4">
-	  Actualmente soy docente de soporte de redes y sistemas informáticos, además de ser Ingeniero de Sistemas. Tengo experiencia como programador Java avanzado, 
-	  desarrollo de aplicaciones móviles en Android con Kotlin, y dominio en tecnologías como CSS y JavaScript. He trabajado en diversos entornos, incluyendo 
-	  software para clínicas y aplicaciones móviles de ventas para grandes empresas.
-	</p>
-	<p>
-	  En mi tiempo libre, disfruto tocar piano, jugar softball y compartir con mi esposa y mis tres hij@s. También me identifico como cristiano evangélico 
-	  pentecostal, lo cual forma parte esencial de mi vida y valores personales.
-	</p>
+    <h2 class="section-title" data-lang-key="aboutTitle">About me</h2>
+    <p class="mb-4" data-lang-key="aboutPara1">
+      I am a developer with a deep passion for creating intuitive and functional user interfaces. My journey into the world of development began driven by curiosity and a strong inclination towards applied logic. Since then, I have developed various applications for personal use, focusing especially on projects that integrate design and development, in both mobile and desktop environments. My goal has always been to build digital experiences that not only look good but also offer high performance and excellent usability.
+    </p>
+    <p class="mb-4" data-lang-key="aboutPara2">
+      I currently work as an instructor in the area of network and IT systems support, in addition to being a Systems Engineer. I have experience as an advanced Java programmer, as well as in developing mobile applications on Android using Kotlin. I master web technologies such as CSS and JavaScript, and I have participated in software projects focused on Medical Centers and mobile sales applications for large companies.
+    </p>
+    <p data-lang-key="aboutPara3">
+      Outside of my professional life, I enjoy playing the piano, playing softball, and spending quality time with my wife and our three children. I identify as a Pentecostal evangelical Christian, a fundamental part of my life that guides my personal values and principles.
+    </p>
 
     <div class="row text-center">
       <div class="col-md-4 mb-3">
         <div class="info-icon">💻</div>
-        <h5 class="mt-2">Desarrollo Web</h5>
+        <h5 class="mt-2" data-lang-key="webDev">Web Development</h5>
       </div>
       <div class="col-md-4 mb-3">
         <div class="info-icon">📱</div>
-        <h5 class="mt-2">Apps Responsivas</h5>
+        <h5 class="mt-2" data-lang-key="responsiveApps">Responsive Apps</h5>
       </div>
       <div class="col-md-4 mb-3">
         <div class="info-icon">☁️</div>
-        <h5 class="mt-2">Hosting y Deploy</h5>
+        <h5 class="mt-2" data-lang-key="hostingDeploy">Hosting & Deploy</h5>
       </div>
     </div>
   </div>
 
   <div class="container py-5" id="projects">
-  <h2 class="section-title">Proyectos</h2>
-  <div class="row">
-    
-    <!-- App 1 -->
-    <div class="col-md-6">
-      <div class="proyecto d-flex flex-column align-items-center text-center">
-        <img src="assets/img/logo_domino.png" alt="App 1" class="mb-3" style="width: 80px; height: 80px;">
-        <h5>LisaDomino (Apuntes)</h5>
-        <p>Lisa Domino es la aplicación indispensable para todos los amantes del dominó. Diseñada para mejorar tu experiencia de juego, 
-		Lisa Domino te libera de tener que llevar la puntuación a mano, permitiéndote concentrarte de lleno en la estrategia y disfrutar cada partida. 
-		Disponible en Android.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.mm.lisadomino" class="btn btn-success btn-sm" target="_blank">Descargar</a>
+    <h2 class="section-title" data-lang-key="projectsTitle">Projects</h2>
+    <div class="row">
+        
+      <div class="col-md-6">
+        <div class="proyecto d-flex flex-column align-items-center text-center">
+          <img src="assets/img/logo_domino.png" alt="App 1" class="mb-3" style="width: 80px; height: 80px;">
+          <h5 data-lang-key="lisaDominoTitle">LisaDomino (Notes)</h5>
+          <p data-lang-key="lisaDominoDesc">
+            An essential application for all domino lovers. Designed to enhance your gaming experience, allowing you to fully concentrate on strategy and enjoy every game. Available on Android.
+          </p>
+          <a href="https://play.google.com/store/apps/details?id=com.mm.lisadomino" class="btn btn-success btn-sm" target="_blank" data-lang-key="download">Download</a>
+        </div>
       </div>
-    </div>
 
-    <!-- App 2 -->
-    <div class="col-md-6">
-      <div class="proyecto d-flex flex-column align-items-center text-center">
-        <img src="assets/img/logo_instantMsg.png" alt="App 2" class="mb-3" style="width: 80px; height: 80px;">
-        <h5>InstantMsg</h5>
-        <p>InstantMsg es la aplicación en la que podrás enviar mensaje a cualquier numero del mundo que este registrado en WhatsApp, pero sin la necesidad de registrarlo como contacto.
-		Disponible en Android.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.mm.instantmsg" class="btn btn-success btn-sm" target="_blank">Descargar</a>
+      <div class="col-md-6">
+        <div class="proyecto d-flex flex-column align-items-center text-center">
+          <img src="assets/img/logo_instantMsg.png" alt="App 2" class="mb-3" style="width: 80px; height: 80px;">
+          <h5 data-lang-key="instantMsgTitle">InstantMsg</h5>
+          <p data-lang-key="instantMsgDesc">
+            InstantMsg is the application where you can send messages to any number in the world registered on WhatsApp, and if not, it sends an invitation, without the need to save it as a contact. Available on Android.
+          </p>
+          <a href="https://play.google.com/store/apps/details?id=com.mm.instantmsg" class="btn btn-success btn-sm" target="_blank" data-lang-key="download">Download</a>
+        </div>
       </div>
-    </div>
+      
+      <div class="col-md-6">
+        <div class="proyecto d-flex flex-column align-items-center text-center">
+          <img src="assets/img/logo.png" alt="App 2" class="mb-3" style="width: 100px; height: 100px;">
+          <h5 data-lang-key="mercaVillaTitle">MercaVilla</h5>
+          <p data-lang-key="mercaVillaDesc">
+            Web application for selling food and artisanal products, using Bootstrap, HTML5, CSS, Firebase, simple and efficient interface.
+          </p>
+          <a href="https://mercavilla.netlify.app/" class="btn btn-outline-primary btn-sm" target="_blank" data-lang-key="viewNetlify">View on Netlify</a>
+        </div>
+      </div>
 
+    </div>
   </div>
-</div>
 
 
   <div class="container py-5" id="contact">
-  <h2 class="section-title text-center mb-5">Contáctame</h2>
-  <div class="row justify-content-center g-4">
+    <h2 class="section-title text-center mb-5" data-lang-key="contactTitle">Contact me</h2>
+    <div class="row justify-content-center g-4">
 
-    <!-- Correo -->
-    <div class="col-md-4">
-      <div class="card bg-dark border-0 shadow-lg text-center h-100">
-	  <<img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" class="card-img-top p-2" style="max-height:120px; object-fit:contain;" alt="Gmail">
-        <div class="card-body">
-          <h5 class="card-title mt-2">Correo electrónico</h5>
-          <p class="card-text">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=misaelm293@gmail.com" target="_blank" class="btn btn-outline-info btn-sm">Escríbeme en Gmail</a>
-          </p>
+      <div class="col-md-4">
+        <div class="card bg-dark border-0 shadow-lg text-center h-100">
+          <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" class="card-img-top p-2" style="max-height:120px; object-fit:contain;" alt="Gmail">
+          <div class="card-body">
+            <h5 class="card-title mt-2" data-lang-key="emailTitle">Email</h5>
+            <p class="card-text">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=misaelm293@gmail.com" target="_blank" class="btn btn-outline-info btn-sm" data-lang-key="emailButton">Email me on Gmail</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- GitHub -->
-    <div class="col-md-4">
-      <div class="card bg-dark border-0 shadow-lg h-100">
-        <img src="https://opengraph.githubassets.com/1/MisaelM293" class="card-img-top" alt="GitHub Preview">
-        <div class="card-body text-center">
-          <h5 class="card-title mt-2">GitHub</h5>
-          <a href="https://github.com/MisaelM293" target="_blank" class="btn btn-outline-info btn-sm">Visitar perfil</a>
+      <div class="col-md-4">
+        <div class="card bg-dark border-0 shadow-lg h-100">
+          <img src="https://opengraph.githubassets.com/1/MisaelM293" class="card-img-top" alt="GitHub Preview">
+          <div class="card-body text-center">
+            <h5 class="card-title mt-2" data-lang-key="githubTitle">GitHub</h5>
+            <a href="https://github.com/MisaelM293" target="_blank" class="btn btn-outline-info btn-sm" data-lang-key="githubButton">Visit profile</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- LinkedIn -->
-   <div class="col-md-4">
-  <div class="card bg-dark border-0 shadow-lg h-100">
-    <<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="card-img-top p-2" style="max-height:120px; object-fit:contain;" alt="LinkedIn">
-    <div class="card-body text-center">
-      <h5 class="card-title mt-2">LinkedIn</h5>
-      <a href="https://www.linkedin.com/in/misael-marte/" target="_blank" class="btn btn-outline-info btn-sm">Conectemos</a>
+      <div class="col-md-4">
+        <div class="card bg-dark border-0 shadow-lg h-100">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="card-img-top p-2" style="max-height:120px; object-fit:contain;" alt="LinkedIn">
+          <div class="card-body text-center">
+            <h5 class="card-title mt-2" data-lang-key="linkedinTitle">LinkedIn</h5>
+            <a href="https://www.linkedin.com/in/misael-marte/" target="_blank" class="btn btn-outline-info btn-sm" data-lang-key="linkedinButton">Connect with me</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
-</div>
-
-  </div>
-</div>
-
-
 
   <footer>
-    &copy; 2025 Misael A. Marte R. Desarrollado con 💙 y Bootstrap.
+    &copy; 2025 Misael A. Marte R. Developed with 💙 and Bootstrap.
   </footer>
 
-  <!-- Modal Currículum -->
   <div class="modal fade" id="curriculumModal" tabindex="-1" aria-labelledby="curriculumModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content bg-dark text-light">
         <div class="modal-header">
-          <h5 class="modal-title" id="curriculumModalLabel">Currículum de Misael Marte</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          <h5 class="modal-title" id="curriculumModalLabel" data-lang-key="cvModalTitle">Misael Marte's Resume</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="height: 80vh;">
           <iframe src="assets/cv/Misael_Marte_CV.pdf" width="100%" height="100%" style="border:none;"></iframe>
@@ -687,28 +828,6 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const themeToggle = document.getElementById("themeToggle");
-    const body = document.body;
-
-    themeToggle.addEventListener("click", () => {
-      // Alternar clase de tema claro
-       const isLightMode = body.classList.toggle("light-mode");
-
-      // Verificar si está en modo claro y cambiar icono
-     // const isLight = body.classList.contains("light-mode");
-
-      // Cambiar icono
-      themeToggle.classList.remove(isLightMode ? "fa-moon" : "fa-sun");
-      themeToggle.classList.add(isLightMode ? "fa-sun" : "fa-moon");
-    });
-  });
-</script>
-
 
 </body>
 </html>
