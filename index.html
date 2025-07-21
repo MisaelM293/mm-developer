@@ -264,14 +264,146 @@
     .modal-content {
       background-color: inherit;
       color: inherit;
+      border-radius: 0.75rem; /* Slightly more rounded corners */
     }
-    
+
+    /* Styles for highlighted search results */
     mark.resaltado {
-      background-color: yellow;
+      background-color: #ffe600; /* A more pleasant yellow */
+      color: #333;
       padding: 0 2px;
       border-radius: 3px;
+      animation: highlightFade 2s forwards; /* Fades out the highlight */
+    }
+
+    @keyframes highlightFade {
+      from { background-color: #ffe600; }
+      to { background-color: transparent; }
     }
     
+    /* Custom Toast Styling */
+    .toast-container {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1050; /* Above modals */
+    }
+    .toast {
+        background-color: #343a40; /* Dark background */
+        color: #c9d1d9; /* Light text */
+        border: 1px solid #495057;
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        opacity: 0.95;
+    }
+    .toast.showing {
+        opacity: 0;
+    }
+    .toast.show {
+        opacity: 0.95;
+    }
+    .toast-header {
+        background-color: transparent;
+        color: #c9d1d9;
+        border-bottom: none;
+        padding-bottom: 0.25rem;
+        font-weight: 600;
+    }
+    .toast-body {
+        padding-top: 0.25rem;
+    }
+    /* Light mode toast styling */
+    body.light-mode .toast {
+        background-color: #f8f9fa; /* Light background */
+        color: #212529; /* Dark text */
+        border: 1px solid #ced4da;
+    }
+    body.light-mode .toast-header {
+        color: #212529;
+    }
+
+    /* Modern Search Modal Enhancements */
+    #modalBusqueda .modal-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    }
+    body.light-mode #modalBusqueda .modal-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    #busquedaInput {
+      /* ANTES: background-color: rgba(255, 255, 255, 0.08); */
+      background-color: #1a2027; /* Fondo más sólido para modo oscuro */
+      border: 1px solid rgba(255, 255, 255, 0.25); /* Borde un poco más visible */
+      color: #c9d1d9;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      transition: all 0.2s ease-in-out;
+    }
+    #busquedaInput:focus {
+      background-color: #0d1117; /* Se mantiene oscuro al enfocar */
+      border-color: #58a6ff;
+      box-shadow: 0 0 0 0.25rem rgba(88, 166, 255, 0.25);
+    }
+    body.light-mode #busquedaInput {
+      /* ANTES: background-color: rgba(0, 0, 0, 0.05); */
+      background-color: #f0f2f5; /* Fondo más sólido para modo claro */
+      border: 1px solid rgba(0, 0, 0, 0.25); /* Borde un poco más visible */
+      color: #212529;
+    }
+    body.light-mode #busquedaInput:focus {
+      background-color: #ffffff;
+      border-color: #0d6efd;
+      box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    #sugerencias {
+      margin-top: 0.75rem;
+      max-height: 250px; /* Limit height and make it scrollable */
+      overflow-y: auto;
+      border: none; /* Remove default list-group border */
+    }
+
+    #sugerencias .list-group-item {
+      background-color: transparent; /* Remove background */
+      border: none;
+      color: #c9d1d9;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      text-align: left; /* Align text to left */
+      border-radius: 0.3rem; /* Small border-radius for items */
+    }
+
+    #sugerencias .list-group-item:hover,
+    #sugerencias .list-group-item:focus {
+      background-color: rgba(88, 166, 255, 0.1); /* Subtle hover effect */
+      color: #58a6ff;
+      outline: none; /* Remove outline on focus */
+    }
+    body.light-mode #sugerencias .list-group-item:hover,
+    body.light-mode #sugerencias .list-group-item:focus {
+      background-color: rgba(13, 110, 253, 0.1);
+      color: #0d6efd;
+    }
+
+    #sugerencias .list-group-item mark {
+      background-color: rgba(255, 255, 0, 0.5); /* Highlight color for suggestions */
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    /* Cambio para el modal-content */
+    .modal-content {
+      /* ANTES: background-color: inherit; */
+      background-color: #161b22; /* Un fondo más oscuro y sólido para el modal */
+      color: #c9d1d9;
+      border-radius: 0.75rem;
+    }
+    body.light-mode .modal-content {
+      background-color: #ffffff; /* Fondo blanco sólido para el modo claro */
+      color: #121212;
+    }
   </style>
 </head>
 <body>
@@ -280,7 +412,7 @@
 
   <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <a class="navbar-brand" href="#">M A.<span> M R.</span></a>
+      <a class="navbar-brand" href="#">Misael<span> Marte</span></a>
       <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -299,8 +431,8 @@
     </div>
   </nav>
     
-    <div class="modal fade" id="modalBusqueda" tabindex="-1">
-    <div class="modal-dialog modal-md">
+  <div class="modal fade" id="modalBusqueda" tabindex="-1">
+    <div class="modal-dialog modal-md modal-dialog-centered">
       <div class="modal-content text-center">
         <div class="modal-header">
           <h5 class="modal-title" data-lang-key="searchTitle">Search</h5>
@@ -327,6 +459,17 @@
       </div>
     </div>
   </section>
+
+  <div class="toast-container">
+    <div id="searchToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto" data-lang-key="toastHeader">Search Result</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body" id="toastMessage">
+        </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -416,12 +559,22 @@
       e.target.classList.add(isLightMode ? "fa-sun" : "fa-moon");
     });
     
-    // Search Button
+    // Search Functionality
     document.addEventListener('DOMContentLoaded', () => {
       const inputBusqueda = document.getElementById('busquedaInput');
       const modalBusqueda = document.getElementById('modalBusqueda');
       const modal = new bootstrap.Modal(modalBusqueda);
       const sugerenciasLista = document.getElementById("sugerencias");
+      let currentHighlightedMatch = null; // Keep track of the currently highlighted match to scroll to
+
+      // Function to show Bootstrap Toast
+      function showToast(message) {
+        const toastEl = document.getElementById('searchToast');
+        const toastBody = toastEl.querySelector('#toastMessage');
+        toastBody.textContent = message;
+        const toast = new bootstrap.Toast(toastEl, { delay: 3000 }); // 3 seconds delay
+        toast.show();
+      }
 
       // Keyboard shortcut Ctrl+F or Cmd+F
       document.addEventListener('keydown', (e) => {
@@ -432,85 +585,68 @@
         }
       });
       
-      // Real-time suggestions
+      // Real-time suggestions - Improved
       inputBusqueda.addEventListener('input', () => {
-        const texto = inputBusqueda.value.trim().toLowerCase();
-        sugerenciasLista.innerHTML = '';
-        if (texto.length < 3) return;
+        const textoBusqueda = inputBusqueda.value.trim();
+        sugerenciasLista.innerHTML = ''; // Clear previous suggestions
 
-        const coincidencias = new Set();
+        if (textoBusqueda.length < 2) { // Require at least 2 characters for suggestions
+          return;
+        }
 
-        // Search for unique matches
-        const nodosTexto = Array.from(document.body.querySelectorAll("*:not(script):not(style):not(mark)"))
-          .filter(el => el.childNodes.length && Array.from(el.childNodes).some(n => n.nodeType === 3));
+        const regex = new RegExp(`(${textoBusqueda})`, 'gi');
+        const MAX_SUGGESTIONS = 5;
+        let suggestionsCount = 0;
+        const seenSuggestions = new Set(); // To avoid duplicate suggestions
 
-        nodosTexto.forEach(el => {
-          el.childNodes.forEach(nodo => {
-            if (nodo.nodeType === 3) {
-              const contenido = nodo.nodeValue.toLowerCase();
-              if (contenido.includes(texto)) {
-                const oracion = nodo.nodeValue.trim();
-                if (oracion.length > 0) {
-                  coincidencias.add(oracion.length > 100 ? oracion.slice(0, 100) + '…' : oracion);
-                }
+        // Iterate over all text nodes in the body (excluding scripts and styles)
+        function findTextNodes(node) {
+          if (node.nodeType === 3 && node.parentNode && !['SCRIPT', 'STYLE'].includes(node.parentNode.nodeName)) {
+            const textContent = node.nodeValue;
+            if (regex.test(textContent)) {
+              // Extract a contextual snippet around the match
+              const matchIndex = textContent.toLowerCase().indexOf(textoBusqueda.toLowerCase());
+              const snippetStart = Math.max(0, matchIndex - 30); // 30 chars before
+              const snippetEnd = Math.min(textContent.length, matchIndex + textoBusqueda.length + 30); // 30 chars after
+              let snippet = textContent.substring(snippetStart, snippetEnd);
+
+              // Add ellipses if snippet is truncated
+              if (snippetStart > 0) snippet = '...' + snippet;
+              if (snippetEnd < textContent.length) snippet = snippet + '...';
+
+              // Highlight the search term within the snippet for display
+              const highlightedSnippet = snippet.replace(regex, '<mark>$1</mark>');
+
+              if (!seenSuggestions.has(highlightedSnippet) && suggestionsCount < MAX_SUGGESTIONS) {
+                const li = document.createElement("li");
+                li.classList.add("list-group-item", "list-group-item-action");
+                li.style.cursor = "pointer";
+                li.innerHTML = highlightedSnippet; // Use innerHTML for the mark tag
+
+                li.addEventListener('click', () => {
+                  inputBusqueda.value = textoBusqueda; // Set input to the exact search term
+                  sugerenciasLista.innerHTML = ''; // Clear suggestions
+                  realizarBusqueda(textoBusqueda); // Perform the actual search and highlight
+                  modal.hide(); // Close modal after selection
+                });
+                sugerenciasLista.appendChild(li);
+                seenSuggestions.add(highlightedSnippet);
+                suggestionsCount++;
               }
             }
-          });
-        });
-
-        // Display suggestions
-        Array.from(coincidencias).slice(0, 5).forEach(resultado => {
-          const li = document.createElement("li");
-          li.classList.add("list-group-item", "list-group-item-action");
-          li.style.cursor = "pointer";
-          li.textContent = resultado;
-          
-          li.addEventListener('click', () => {
-            inputBusqueda.value = resultado;
-            sugerenciasLista.innerHTML = '';
-
-            // Search and highlight the exact node with that text
-            const nodosTexto = Array.from(document.body.querySelectorAll("*:not(script):not(style):not(mark)"))
-              .filter(el => el.childNodes.length && Array.from(el.childNodes).some(n => n.nodeType === 3));
-
-            let encontrado = false;
-
-            nodosTexto.forEach(el => {
-              el.childNodes.forEach(nodo => {
-                if (nodo.nodeType === 3 && nodo.nodeValue.trim().includes(resultado)) {
-                  const regex = new RegExp(`(${resultado})`, 'i');
-                  const span = document.createElement("span");
-                  span.innerHTML = nodo.nodeValue.replace(regex, `<mark class="resaltado">$1</mark>`);
-                  nodo.parentNode.replaceChild(span, nodo);
-
-                  const marca = span.querySelector('mark');
-                  if (marca) {
-                    marca.scrollIntoView({ behavior: "smooth", block: "center" });
-                  }
-
-                  encontrado = true;
-                }
-              });
-            });
-
-            if (!encontrado) {
-              alert('Content not found');
-            }
-
-            // Close the modal if open
-            const modal = bootstrap.Modal.getInstance(document.getElementById('modalBusqueda'));
-            if (modal) modal.hide();
-          });
-          
-          sugerenciasLista.appendChild(li);
-        });
+          } else if (node.nodeType === 1 && node.childNodes && !['SCRIPT', 'STYLE', 'MARK'].includes(node.nodeName)) {
+            node.childNodes.forEach(findTextNodes);
+          }
+        }
+        findTextNodes(document.body);
       });
+
 
       // Search on Enter key press
       inputBusqueda.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
           e.preventDefault();
-          limpiarResaltado();
+          limpiarResaltado(); // Clear previous highlights
           realizarBusqueda(inputBusqueda.value.trim());
         }
       });
@@ -518,48 +654,78 @@
       // Clear on modal close
       modalBusqueda.addEventListener('hidden.bs.modal', () => {
         inputBusqueda.value = '';
+        sugerenciasLista.innerHTML = '';
         limpiarResaltado();
       });
 
+      // Main search and highlight function - Improved
       function realizarBusqueda(texto) {
-        if (!texto) return;
+        if (!texto) {
+          limpiarResaltado(); // Ensure no lingering highlights
+          return;
+        }
 
-        const contenido = document.body;
+        limpiarResaltado(); // Clear previous highlights before new search
+
         const regex = new RegExp(`(${texto})`, 'gi');
         let encontrado = false;
-        let primeraCoincidencia = null;
+        let firstMatchElement = null;
 
+        // Traverse all nodes in the body
         const recorrerNodos = (nodo) => {
-          if (nodo.nodeType === 3 && nodo.parentNode && nodo.parentNode.nodeName !== "SCRIPT" && nodo.parentNode.nodeName !== "STYLE") {
-            if (regex.test(nodo.nodeValue)) {
-              const span = document.createElement("span");
-              span.innerHTML = nodo.nodeValue.replace(regex, `<mark class="resaltado">$1</mark>`);
-              nodo.parentNode.replaceChild(span, nodo);
-              if (!primeraCoincidencia) {
-                primeraCoincidencia = span.querySelector("mark.resaltado");
+          // Check if it's a text node and not inside script/style tags
+          if (nodo.nodeType === 3 && nodo.parentNode && !['SCRIPT', 'STYLE'].includes(nodo.parentNode.nodeName)) {
+            const parentNode = nodo.parentNode;
+
+            // Only process if the parent is not already a 'mark' element (to avoid nesting highlights)
+            if (parentNode.nodeName !== 'MARK') {
+              const matches = nodo.nodeValue.match(regex);
+              if (matches) {
+                encontrado = true;
+                const fragment = document.createDocumentFragment();
+                let lastIndex = 0;
+
+                // Split text node and insert mark elements
+                nodo.nodeValue.replace(regex, (match, p1, offset) => {
+                  fragment.appendChild(document.createTextNode(nodo.nodeValue.substring(lastIndex, offset)));
+                  const mark = document.createElement('mark');
+                  mark.classList.add('resaltado');
+                  mark.textContent = match;
+                  fragment.appendChild(mark);
+                  if (!firstMatchElement) {
+                    firstMatchElement = mark; // Capture the first match
+                  }
+                  lastIndex = offset + match.length;
+                  return match; // Return original match for replace function
+                });
+                fragment.appendChild(document.createTextNode(nodo.nodeValue.substring(lastIndex)));
+                parentNode.replaceChild(fragment, nodo);
               }
-              encontrado = true;
             }
-          } else if (nodo.nodeType === 1 && nodo.childNodes && !['SCRIPT', 'STYLE', 'MARK'].includes(nodo.nodeName)) {
-            nodo.childNodes.forEach(recorrerNodos);
+          } else if (nodo.nodeType === 1 && nodo.childNodes && !['SCRIPT', 'STYLE'].includes(nodo.nodeName)) {
+            // Recursively call for element nodes, skipping script/style
+            Array.from(nodo.childNodes).forEach(recorrerNodos);
           }
         };
 
-        recorrerNodos(contenido);
+        recorrerNodos(document.body);
 
-        if (encontrado && primeraCoincidencia) {
-          primeraCoincidencia.scrollIntoView({ behavior: "smooth", block: "center" });
-          modal.hide(); // Close the modal
+        if (encontrado && firstMatchElement) {
+          firstMatchElement.scrollIntoView({ behavior: "smooth", block: "center" });
+          modal.hide(); // Close the modal if a match is found
         } else {
-          alert(translations[currentLanguage]['alertNotFound'] + `: "${texto}"`);
+          showToast(translations[currentLanguage]['alertNotFound'] + `: "${texto}"`);
         }
       }
 
+      // Function to clear all highlights
       function limpiarResaltado() {
         const marcas = document.querySelectorAll('mark.resaltado');
         marcas.forEach(mark => {
-          const texto = document.createTextNode(mark.textContent);
-          mark.parentNode.replaceChild(texto, mark);
+          // Replace the <mark> element with its text content
+          const textNode = document.createTextNode(mark.textContent);
+          mark.parentNode.replaceChild(textNode, mark);
+          // Clean up any empty text nodes that might have been created
           mark.parentNode.normalize();
         });
       }
@@ -602,7 +768,8 @@
         linkedinButton: "Connect with me",
         footerText: "&copy; 2025 Misael A. Marte R. Developed with 💙 and Bootstrap.",
         cvModalTitle: "Misael Marte's Resume",
-        alertNotFound: "No content found matching"
+        alertNotFound: "No content found matching",
+        toastHeader: "Search Result"
 
       },
       es: {
@@ -639,7 +806,8 @@
         linkedinButton: "Conectemos",
         footerText: "&copy; 2025 Misael A. Marte R. Desarrollado con 💙 y Bootstrap.",
         cvModalTitle: "Currículum de Misael Marte",
-        alertNotFound: "No se encontró contenido que coincida con"
+        alertNotFound: "No se encontró contenido que coincida con",
+        toastHeader: "Resultado de Búsqueda"
       }
     };
 
